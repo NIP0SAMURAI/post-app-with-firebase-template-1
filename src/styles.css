@@ -13,6 +13,23 @@
 /* ---------- Global Styling ---------- */
 html {
   box-sizing: border-box;
+  font-size: 16px;
+}
+
+main div {
+  display: flex;
+}
+
+.map-container {
+  position: relative;
+  z-index: 2; /* Ensure the map stays at the bottom */
+  margin-bottom: 40px;
+}
+
+.content-container {
+  z-index: 1; /* Make sure content appears above the map */
+  position: relative;
+  padding-top: 55vh; /* Adjust the space between map and content */
 }
 
 *,
@@ -163,23 +180,25 @@ nav {
   position: fixed;
   right: 0;
   text-align: center;
-  top: 0;
+  bottom: 0;
   padding: 1em 2em;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
+  height: fit-content;
+  z-index: 2;
 }
 
 nav a {
   display: inline-block;
   color: var(--text-color-light);
   text-align: center;
-  padding: 20px 16px;
+  padding: 10px;
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 2px solid var(--green);
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1rem;
   border-radius: 8px;
   transition: 0.5s;
 }
@@ -197,7 +216,8 @@ nav a.active {
 /* ---------- Page Styling ---------- */
 .page {
   animation: fadeIn 0.5s;
-  padding: 140px 2em 2em;
+  padding: 0 2em 2em;
+  ;
 }
 
 /* ---------- Container Styling ---------- */
@@ -255,7 +275,7 @@ nav a.active {
 /* ---------- Post Card Styling ---------- */
 .post-card {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-  padding: 1.5em;
+  padding: 1.5rem;
   background-color: var(--white);
   transition: 0.5s;
   animation: fadeIn 0.5s;
@@ -282,6 +302,14 @@ nav a.active {
   margin: 0;
 }
 
+/* Post Page Styling */
+#post-page .post-card > img {
+  height: auto;
+}
+
+#post-page .btns {
+  padding: 1em 0;
+}
 /* ---------- Avatar Styling ---------- */
 .avatar {
   display: flex;
