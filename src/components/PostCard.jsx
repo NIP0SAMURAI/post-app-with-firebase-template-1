@@ -12,7 +12,7 @@ export default function PostCard({ post }) {
     <article className="post-card" onClick={handleClick}>
       <UserAvatar uid={post.uid} />
       <h4>{post.caption}</h4>
-      <img src={post.image} alt={post.caption} />
+      <img src={post.image} alt={post.caption} className="mushroom-image" />
     </article>
   );
 }

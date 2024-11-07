@@ -94,7 +94,7 @@ export default function Nav() {
             alt="Create Post Icon"
             className="nav-icon"
           />
-          <span className="nav-label">Create Post</span>
+          <span className="nav-label">Create</span>
         </div>
       </NavLink>
 

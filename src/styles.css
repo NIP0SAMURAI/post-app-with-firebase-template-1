@@ -68,6 +68,12 @@ h3 {
   letter-spacing: -0.1px;
 }
 
+h4 {
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  color: grey;
+}
+
 /* ---------- Link Styling ---------- */
 a {
   color: var(--green);
@@ -177,6 +183,8 @@ form {
   margin: 1em 0;
 }
 
+/* Search bar styling
+
 /* ---------- Navigation Styling ---------- */
 /* ---------- Navigation Styling (Updated for images) ---------- */
 nav {
@@ -187,10 +195,10 @@ nav {
   right: 0;
   text-align: center;
   bottom: 0;
-  padding: 1em 2em;
+  padding: 0em 1em 3.5em 1em;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Adjusted for more items */
   gap: 1em;
-  height: 64px;
+  height: fit-content;
   z-index: 2;
 }
 
@@ -214,7 +222,13 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: contain; /* Makes sure the image scales proportionally */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
 }
 
 /* Active state for the icon */
@@ -222,23 +236,15 @@ nav a.active .nav-icon {
   opacity: 1; /* Active image is fully visible */
 }
 
-/* ---------- Style for the Search Icon Image ---------- */
-.search-icon {
-  cursor: pointer; /* Make the image clickable */
-  width: 30px; /* Adjust the size of the image */
-  height: 30px; /* Adjust the height */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Add smooth transitions */
+nav a.active .nav-label {
+  font-weight: 600;
 }
 
-/* Active state for the search icon image */
-.search-icon.active {
-  opacity: 1; /* Ensure the active image is fully visible */
-}
+/* ---------- Style for the Search Icon Image ---------- */
 
 /* ---------- Page Styling ---------- */
 .page {
   animation: fadeIn 0.5s;
-  padding: 0 2em 2em;
 }
 
 /* ---------- Container Styling ---------- */
@@ -301,10 +307,11 @@ nav a.active .nav-icon {
   justify-content: flex-start; /* Align elements to the left */
   gap: 1em; /* Space between image and text */
   padding: 1rem, 1rem, 0.2rem, 1rem;
-  background-color: var(--white);
+  background-color: var(--black);
   border-radius: 10px;
   transition: 0.5s;
   animation: fadeIn 0.5s;
+  width: 100%;
 }
 .post-card:hover {
   box-shadow: 0 1px 12px 0 var(--light-grey);
@@ -313,7 +320,6 @@ nav a.active .nav-icon {
 .post-card img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
   border-radius: 6px;
 }
 
@@ -361,6 +367,16 @@ nav a.active .nav-icon {
 .mushroom-edibility {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  min-width: 96px;
+  padding-left: 12px;
+}
+
+.mushroom-image {
+  min-width: 80px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 12px;
 }
 
 /* ---------- Post Page Styling ---------- */
