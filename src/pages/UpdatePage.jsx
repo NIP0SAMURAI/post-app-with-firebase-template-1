@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom"
 export default function UpdatePage() {
     const [caption, setCaption] = useState("");
     const [image, setImage] = useState("");
+    const [name, setName] = useState("");
+    const [title, setTitle] = useState("");
     const params = useParams();
     const navigate = useNavigate();
 
@@ -14,6 +16,8 @@ export default function UpdatePage() {
             const response = await fetch(url);
             const postData = await response.json();
             console.log(postData);
+            setName(postData.name);
+            setTitle(postData.title);
             setCaption(postData.caption);
             setImage(postData.image);
         }
@@ -24,7 +28,7 @@ export default function UpdatePage() {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        const postToUpdate = {caption, image};
+        const postToUpdate = {name, title, caption, image};
 
         const response = await fetch(url, {
             method: "PATCH",
@@ -43,7 +47,29 @@ export default function UpdatePage() {
             <div className="container">
                 <h1>Update post</h1>
         <form className="form-grid" onSubmit={handleSubmit}>
-          <label htmlFor="caption">Caption</label>
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            value={name}
+            aria-label="name"
+            placeholder="Write the name..."
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <label htmlFor="title">Edibility</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            value={title}
+            aria-label="title"
+            placeholder="Choose the edibility..."
+            onChange={(e) => setTitle(e.target.value)}
+          />
+
+          <label htmlFor="caption">Location</label>
           <input
             id="caption"
             name="caption"

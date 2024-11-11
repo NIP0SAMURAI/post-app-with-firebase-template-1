@@ -1,4 +1,4 @@
-export default function SignInPage {
+export default function SignInPage() {
 
     return (
         <section id="sign-up-page" className="page">

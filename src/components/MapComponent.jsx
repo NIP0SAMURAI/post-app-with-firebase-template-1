@@ -29,7 +29,7 @@ function MapComponent() {
   return (
     <MapContainer
       center={center}
-      zoom={13}
+      zoom={11}
       style={{ width: "100%", height: "55vh", position: "fixed"}}
     >
       {/* OpenStreetMap Tile Layer */}
@@ -48,7 +48,9 @@ function MapComponent() {
 
         return (
           <Marker key={mushroom.id} position={mushroom.coordinates} icon={icon}>
-            <Popup>{mushroom.name}</Popup>
+            <Popup>
+              {mushroom.name}
+            </Popup>
           </Marker>
         );
       })}
